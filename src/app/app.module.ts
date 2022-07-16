@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { BlogListComponent } from './components/blog-list/blog-list.component';
 import { PostDetailsComponent } from './components/post-details/post-details.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NavigationComponent } from './components/navigation/navigation.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
