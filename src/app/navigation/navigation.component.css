@@ -1,0 +1,21 @@
+nav {
+    box-shadow: 0 0 1px #000000;
+    top: 0;
+    width: 100%;
+}
+
+nav ol {
+    list-style-type:none;
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+nav ol li ul {
+    display: flex;
+    list-style-type:none ;
+}
+
+nav ol li ul li {
+    padding: 0 2em 0 0;
+}

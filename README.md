@@ -16,11 +16,12 @@ It was generated with [Angular CLI](https://github.com/angular/angular-cli) vers
 | Git and GitHub | Version control |
 | Angular | Javascript framework |
 | Workbox | Service worker |
-| Angular material, CSS and Bootstrap | Styling |
+| CSS | Styling |
+| HTML | Markup language |
 
 ## Project brief
 
-The project is a single-paged progressive wed application. Hence, it can be installed by users and accessed offline.
+The project is a responsive, accessible, single-paged progressive wed application. Hence, it can be installed by users and accessed offline.
 
 ## Url
 

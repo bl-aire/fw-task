@@ -4,8 +4,10 @@ import { BlogListComponent } from "./blog-list/blog-list.component";
 import { PostDetailsComponent } from "./post-details/post-details.component";
 
 const routes: Routes = [
-    { path: 'blog-list', component: BlogListComponent },
-    { path: 'post-details', component: PostDetailsComponent }
+    { path: 'home', component: BlogListComponent },
+    { path: 'post-details', component: PostDetailsComponent },
+    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    { path: '**', component: BlogListComponent },
 ];
 
 @NgModule({
