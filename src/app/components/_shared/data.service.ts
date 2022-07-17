@@ -20,7 +20,7 @@ export class DataService {
     );
   }
 
-  getSinglePost(id: number) {
+  getSinglePost(id: string) {
     const url = `${this.endpoint}/${id}`
     return this.http.get(url).pipe(catchError(this.handleError))
   }

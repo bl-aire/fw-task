@@ -21,7 +21,7 @@
         <div class="blogpost__footer">
             <span class="blogpost__footer-time">{{ totalReadTime }}</span>
             <span class="blogpost__footer-link">
-                <a href="">Read full</a>
+                <a [routerLink]="['/post', post.id]">Read full</a>
             </span>
         </div>
     </div>

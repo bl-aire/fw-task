@@ -22,23 +22,21 @@ export class BlogListComponent implements OnInit {
   errorMessage: string = '';
   sub: Subscription | any;
 
-  //posts: IData[] = [];
-  posts: any[] = []
+  posts: IData[] = [];
 
   constructor(private dataService : DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) { }
-  ngOnInit(): void {
+  ngOnInit() {
     this.spinner.show();
     this.sub = this.dataService.getPosts().subscribe({
       next: posts => {
         this.posts = posts;
         setTimeout(() => {
           this.spinner.hide();
-        }, 4000);
+        }, 3000);
     
       },
       error: err => this.errorMessage = err
     });
-
   }
 
   ngOnDestroy(){

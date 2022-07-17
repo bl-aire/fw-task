@@ -1,5 +1,5 @@
 export interface IData {
-    id: number,
+    id: string,
     date: any,
     date_gmt: any,
     guid: {

@@ -1,14 +1,14 @@
 <div>
-    <div>
-        <span></span>
+    <div *ngIf="singlePost">
+        <span>{{singlePost.title.rendered}}</span>
+    
         <span></span>
         <h2></h2>
         <p></p>
         <img src="" alt="">
         <p></p>
-    </div>
-    <!--<div>
 
+    <!--<div>
         <h2>More Articles</h2>
         <div *ngFor="let post of posts" class="blogpost">
             <img [src]="post.jetpack_featured_media_url" alt="" class="blogpost__image">
@@ -26,6 +26,5 @@
                     <a href="">Read full</a>
                 </span>
             </div>
-        </div>-->
-
-    </div>
+    </div>-->
+</div>
