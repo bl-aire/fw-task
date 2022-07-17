@@ -20,6 +20,12 @@ export class DataService {
     );
   }
 
+  getSinglePost(id: number) {
+    const url = `${this.endpoint}/${id}`
+    return this.http.get(url).pipe(catchError(this.handleError))
+  }
+
+
   private handleError(err:HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {

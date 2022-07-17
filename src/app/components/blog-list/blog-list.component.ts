@@ -21,7 +21,8 @@ export class BlogListComponent implements OnInit {
   errorMessage: string = '';
   sub: Subscription | any;
 
-  posts: IData[] = [];
+  //posts: IData[] = [];
+  posts: any[] = []
 
   constructor(private dataService : DataService, private flutterwave: Flutterwave) { }
   ngOnInit(): void {
@@ -31,6 +32,7 @@ export class BlogListComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
+
   }
 
   ngOnDestroy(){
@@ -71,6 +73,10 @@ export class BlogListComponent implements OnInit {
  
 }
 
+
+function id(id: any, number: any) {
+  throw new Error('Function not implemented.');
+}
  // ngOnInit(): void {
    // this.http.get('https://techcrunch.com/wp-json/wp/v2/posts')
     //.subscribe(Response => {
