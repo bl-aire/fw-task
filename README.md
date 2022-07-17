@@ -15,9 +15,11 @@ It was generated with [Angular CLI](https://github.com/angular/angular-cli) vers
 | VScode | IDE |
 | Git and GitHub | Version control |
 | Angular | Javascript framework |
-| Workbox | Service worker |
+| @angular/pwa | Service worker |
+| Angular Universal | Server-side rendering |
 | CSS | Styling |
 | HTML | Markup language |
+| ngx-pagination | Pagination|
 
 ## Project brief
 
