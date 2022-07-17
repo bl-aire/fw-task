@@ -3,7 +3,6 @@ import { IData } from '../_shared/datainterface';
 import { Subscription } from 'rxjs';
 import { DataService } from '../_shared/data.service';
 
-
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
@@ -30,6 +29,9 @@ export class BlogListComponent implements OnInit {
     this.sub.unsubscribe();
   }
 
+ 
+}
+
  // ngOnInit(): void {
    // this.http.get('https://techcrunch.com/wp-json/wp/v2/posts')
     //.subscribe(Response => {
@@ -45,4 +47,4 @@ export class BlogListComponent implements OnInit {
     //}
   
 
-}
+
