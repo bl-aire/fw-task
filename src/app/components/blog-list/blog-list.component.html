@@ -1,19 +1,36 @@
-<ul *ngFor="let post of posts">
-    <li>{{post.id}}</li>
-</ul>
+<div>
 
-<flutterwave-make-payment
-    [public_key]="publicKey"
-    [amount]="amount"
-    currency="USD"
-    payment_options="card"
-    redirect_url=""
-    text="Pay Now"
-    [customer]="customerDetails"
-    [customizations]="customizations"
-    [meta]="meta"
-    [tx_ref]="generateReference()"
-    (callback)="makePaymentCallback($event)"
-    (close)="closedPaymentModal()"
-  >
-  </flutterwave-make-payment>
+    <div>hero</div>
+
+
+    <div *ngFor="let post of posts" class="blogpost">
+        <img [src]="post.jetpack_featured_media_url" alt="" class="blogpost__image">
+        <div class="blogpost__data">
+            <span class="blogpost__data-author">{{ post.parsely.meta.creator }}</span>
+            <span class="blogpost__data-date">{{ timePublished }}</span>
+        </div>
+        <div class="blogpost__content">
+            <h2 class="blogpost__content-header" [innerHTML]="post.title.rendered"></h2>
+            <p class="blogpost__content-body" [innerHTML]="post.excerpt.rendered"></p>
+        </div>
+        <div class="blogpost__footer">
+            <span class="blogpost__footer-time">{{ totalReadTime }}</span>
+            <span class="blogpost__footer-link">
+                <a href="">Read full</a>
+            </span>
+        </div>
+    </div>
+
+
+    <div class="footer">
+        <h2 class="footer__title">Join our Team of Writers</h2>
+        <p class="footer__description">On dasdas, writers earn a living doing what they love. <br> Geting started is easy. Just pay a one time
+            <b>$25 fee</b> and everything is ready to go.
+        </p>
+        <flutterwave-make-payment [public_key]="publicKey" [amount]="amount" currency="USD" payment_options="card"
+            redirect_url="" text="Join Us" [customer]="customerDetails" [customizations]="customizations" [meta]="meta"
+            [tx_ref]="generateReference()" (callback)="makePaymentCallback($event)" (close)="closedPaymentModal()" class="footer__subscribe">
+        </flutterwave-make-payment>
+
+    </div>
+</div>

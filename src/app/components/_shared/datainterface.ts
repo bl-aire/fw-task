@@ -1,17 +1,25 @@
 export interface IData {
     id: number,
-    date: Date,
-    date_gmt: Date,
-    guid: object,
-    modified: Date,
-    modified_gmt: Date,
+    date: any,
+    date_gmt: any,
+    guid: {
+        rendered: string
+    };
+    modified: any,
+    modified_gmt: any,
     slug: string,
     status: string,
     type: string,
     link: string,
-    title: object;
-    content: object,
-    excert: object,
+    title: {
+        rendered: string
+    }
+    content: {
+        rendered: string
+    }
+    excerpt: {
+        rendered: string
+    }
     author: number,
     featured_media: number,
     comment_status: string,
@@ -26,8 +34,12 @@ export interface IData {
     tc_stories_tax: any[],
     tc_ec_category: any[],
     tc_event: any[],
-    jatpack_featured_media_url: any,
-    parsely: object,
+    jetpack_featured_media_url: any,
+    parsely: {
+        meta: {
+            creator: string
+        };
+    }
     shortlink: string,
     rapidData: object,
     premiumContent: boolean,

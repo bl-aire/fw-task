@@ -20,8 +20,7 @@ import { FlutterwaveModule } from 'flutterwave-angular-v3';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     HttpClientModule,
-    FlutterwaveModule
-
+    FlutterwaveModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

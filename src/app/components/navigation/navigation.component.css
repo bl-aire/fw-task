@@ -1,21 +1,38 @@
-nav {
-    box-shadow: 0 0 1px #000000;
+.nav {
+    position: sticky;
     top: 0;
-    width: 100%;
+    background-color: #ffffff;
+
 }
 
-nav ol {
-    list-style-type:none;
+.nav__layout {
+    list-style-type: none;
     display: flex;
-    justify-content:space-between;
+    justify-content: space-between;
     align-items: center;
 }
 
-nav ol li ul {
+.menu {
+    list-style-type: none;
     display: flex;
-    list-style-type:none ;
+    padding-right: 2em;
 }
 
-nav ol li ul li {
-    padding: 0 2em 0 0;
+.menu__item, .menu__separator {
+    padding-right: 0.5em;
+}
+
+.menu__separator img{
+    height: 4px;
+}
+
+
+@media only screen and (min-width : 992px) {
+    .menu__item, .menu__separator {
+        padding-right: 1em;
+    }
+
+    .menu__item img {
+        height: 1.6em;
+    }
 }

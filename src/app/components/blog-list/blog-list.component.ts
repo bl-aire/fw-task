@@ -15,6 +15,9 @@ import {
 })
 export class BlogListComponent implements OnInit {
 
+  timePublished: string = "2 Months ago"
+  totalReadTime: string = "12 Min Read"
+
   errorMessage: string = '';
   sub: Subscription | any;
 

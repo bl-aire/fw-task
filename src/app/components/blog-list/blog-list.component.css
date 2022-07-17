@@ -1,3 +1,23 @@
-ul li {
-    margin-top: 10px;
+.blogpost__image {
+    width: 500px;
+}
+
+
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    bottom:0;
+    margin-bottom: 3em;
+}
+
+.footer__description {
+    text-align: center;
+}
+
+flutterwave-make-payment {
+    font-size: 2em;
 }
