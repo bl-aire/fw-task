@@ -7,6 +7,7 @@ import {
   InlinePaymentOptions,
   PaymentSuccessResponse,
 } from "flutterwave-angular-v3";
+import { NgxSpinnerService } from 'ngx-spinner'
 
 @Component({
   selector: 'app-blog-list',
@@ -24,11 +25,16 @@ export class BlogListComponent implements OnInit {
   //posts: IData[] = [];
   posts: any[] = []
 
-  constructor(private dataService : DataService, private flutterwave: Flutterwave) { }
+  constructor(private dataService : DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) { }
   ngOnInit(): void {
+    this.spinner.show();
     this.sub = this.dataService.getPosts().subscribe({
       next: posts => {
         this.posts = posts;
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 4000);
+    
       },
       error: err => this.errorMessage = err
     });
