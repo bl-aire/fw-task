@@ -1,11 +1,12 @@
-<div>
-    <div *ngIf="singlePost">
-        <span>By {{ singlePost.parsely.meta.creator }}</span>
-        <span>{{ timePublished }}</span>
-        <h2 [innerHTML]="singlePost.title.rendered"></h2>
-        <p [innerHTML]="singlePost.content.rendered | slice:0:10000"></p>
-        <img [src]="singlePost.jetpack_featured_media_url" alt="" height="200px">
-        <p></p>
+<div class="container">
+    <div *ngIf="singlePost" class="post">
+        <span class="post__author">By {{ singlePost.parsely.meta.creator }}</span>
+        <span class="post__timePublished">{{ timePublished }}</span>
+        <h2 class="post__header" [innerHTML]="singlePost.title.rendered"></h2>
+        <p class="post__content" [innerHTML]="singlePost.content.rendered | slice:0:1005"></p>
+        <img class="post__image" [src]="singlePost.jetpack_featured_media_url" alt="" height="200px">
+        <p class="post__content" [innerHTML]="singlePost.content.rendered | slice:1005:1600"></p>
+        
     </div>
     <!--<div>
         <h2>More Articles</h2>

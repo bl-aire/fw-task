@@ -1,1 +1,7 @@
-@import "~font-awesome/css/font-awesome.min.css"
+@import "~font-awesome/css/font-awesome.min.css";
+
+@font-face {
+    font-family: SF Pro;
+    src: url(./assets/SF-Pro-Text-Regular.otf) format("truetype");
+}
+

@@ -1,3 +1,7 @@
+.container{
+    font-family: "SF Pro", "Sans-serif";
+}
+
 .blogpost__image {
     max-width: 100%;
     height: auto;
@@ -35,9 +39,21 @@
 
 }
 
-.hero__footer {
+.hero__footer, .blogpost__footer {
     display: flex;
     justify-content: space-between;
+}
+
+.hero__footer-link, .blogpost__footer-link {
+    border: 0;
+    background-color: #ffffff;
+    cursor: pointer;
+}
+
+.hero__footer-link:hover, .blogpost__footer-link:hover {
+    border: 1px solid rgb(44, 137, 165);
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
 }
 
 

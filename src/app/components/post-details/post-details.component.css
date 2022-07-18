@@ -1,0 +1,16 @@
+.container{
+    font-family: "SF Pro", "Sans-serif";
+}
+
+.post {
+    padding: 3em;
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width : 992px) {
+    .post {
+        padding: 0 20em;
+    }
+}

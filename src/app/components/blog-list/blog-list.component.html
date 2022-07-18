@@ -14,9 +14,9 @@
                 <span class="hero__footer-readTime">
                     {{ totalReadTime }}
                 </span>
-                <span class="hero__footer-link">
-                    <a [routerLink]="['/post', hero.id]">Read full</a>
-                </span>
+                <button class="hero__footer-link" [routerLink]="['/post', hero.id]">
+                    <img src="../../../assets/read.png" alt="">
+                </button>
             </div>
         </div>
     </div>
@@ -35,9 +35,9 @@
             </div>
             <div class="blogpost__footer">
                 <span class="blogpost__footer-time">{{ totalReadTime }}</span>
-                <span class="blogpost__footer-link">
-                    <a [routerLink]="['/post', post.id]">Read full</a>
-                </span>
+                <button class="blogpost__footer-link" [routerLink]="['/post', post.id]">
+                    <img src="../../../assets/read.png" alt="">
+                </button>
             </div>
         </div>
     </div>
