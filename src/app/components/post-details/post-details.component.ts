@@ -15,10 +15,11 @@ export class PostDetailsComponent implements OnInit {
   //post: any[] = [];
 
   errorMessage: string = '';
-  sub: Subscription | any;
-  posts: IData[] = [];
   singlePost: any;
   id!: string;
+  sub: Subscription | any;
+  posts: IData[] = [];
+  
   //sub: Subscription | any;
 
   timePublished: string = "2 Months ago"

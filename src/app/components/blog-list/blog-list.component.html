@@ -1,30 +1,47 @@
-<ngx-spinner bdColor = "#000" size = "medium" color = "#fff" type = "pacman" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
+<ngx-spinner size="medium" [type]="typeSelected"></ngx-spinner>
 
 <div class="container">
-
-    <div class="hero">
-        <img class="hero__image" src="" alt="" height="1000px">
-        <div class="hero__text"></div>
-    </div>
-
-
-    <div *ngFor="let post of posts" class="blogpost">
-        <img [src]="post.jetpack_featured_media_url" alt="" class="blogpost__image">
-        <div class="blogpost__data">
-            <span class="blogpost__data-author">{{ post.parsely.meta.creator }}</span>
-            <span class="blogpost__data-date">{{ timePublished }}</span>
-        </div>
-        <div class="blogpost__content">
-            <h2 class="blogpost__content-header" [innerHTML]="post.title.rendered"></h2>
-            <p class="blogpost__content-body" [innerHTML]="post.excerpt.rendered"></p>
-        </div>
-        <div class="blogpost__footer">
-            <span class="blogpost__footer-time">{{ totalReadTime }}</span>
-            <span class="blogpost__footer-link">
-                <a [routerLink]="['/post', post.id]">Read full</a>
-            </span>
+    <div class="hero" *ngIf="hero">
+        
+        <img class="hero__image" [src]="hero.jetpack_featured_media_url" alt="">
+        
+        <div class="hero__text">
+            <span class="hero__text-author">{{ hero.parsely.meta.creator }}</span>
+            <span class="hero__text-publishDate"> {{ timePublished }}</span>
+            <h1 [innerHTML]="hero.title.rendered" class="hero__text-header"></h1>
+            <p [innerHTML]="hero.excerpt.rendered | slice:0:400 " class="hero__text-content"></p>
+            <div class="hero__footer">
+                <span class="hero__footer-readTime">
+                    {{ totalReadTime }}
+                </span>
+                <span class="hero__footer-link">
+                    <a [routerLink]="['/post', hero.id]">Read full</a>
+                </span>
+            </div>
         </div>
     </div>
+
+
+    <div class="blogpost-container">
+        <div *ngFor="let post of posts" class="blogpost">
+            <img [src]="post.jetpack_featured_media_url" alt="" class="blogpost__image">
+            <div class="blogpost__data">
+                <span class="blogpost__data-author">{{ post.parsely.meta.creator }}</span>
+                <span class="blogpost__data-date">{{ timePublished }}</span>
+            </div>
+            <div class="blogpost__content">
+                <h2 class="blogpost__content-header" [innerHTML]="post.title.rendered"></h2>
+                <p class="blogpost__content-body" [innerHTML]="post.excerpt.rendered"></p>
+            </div>
+            <div class="blogpost__footer">
+                <span class="blogpost__footer-time">{{ totalReadTime }}</span>
+                <span class="blogpost__footer-link">
+                    <a [routerLink]="['/post', post.id]">Read full</a>
+                </span>
+            </div>
+        </div>
+    </div>
+   
 
 
     <div class="footer">

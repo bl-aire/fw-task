@@ -1,13 +1,12 @@
 <div>
     <div *ngIf="singlePost">
-        <span>{{singlePost.title.rendered}}</span>
-    
-        <span></span>
-        <h2></h2>
+        <span>By {{ singlePost.parsely.meta.creator }}</span>
+        <span>{{ timePublished }}</span>
+        <h2 [innerHTML]="singlePost.title.rendered"></h2>
+        <p [innerHTML]="singlePost.content.rendered | slice:0:10000"></p>
+        <img [src]="singlePost.jetpack_featured_media_url" alt="" height="200px">
         <p></p>
-        <img src="" alt="">
-        <p></p>
-
+    </div>
     <!--<div>
         <h2>More Articles</h2>
         <div *ngFor="let post of posts" class="blogpost">

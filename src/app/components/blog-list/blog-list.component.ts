@@ -19,27 +19,47 @@ export class BlogListComponent implements OnInit {
   timePublished: string = "2 Months ago"
   totalReadTime: string = "12 Min Read"
 
+  typeSelected: string;
+
   errorMessage: string = '';
   sub: Subscription | any;
 
   posts: IData[] = [];
 
-  constructor(private dataService : DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) { }
+  hero: any;;
+  id!: string;
+
+  constructor(private dataService: DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) {
+    this.typeSelected = 'ball-fussion';
+  }
+
+
   ngOnInit() {
     this.spinner.show();
+
+    this.sub = this.dataService.getHero().subscribe({
+      next: hero => {
+        this.hero = hero;
+      }
+    })
+
+
     this.sub = this.dataService.getPosts().subscribe({
       next: posts => {
         this.posts = posts;
         setTimeout(() => {
           this.spinner.hide();
         }, 3000);
-    
+
       },
       error: err => this.errorMessage = err
     });
   }
 
-  ngOnDestroy(){
+
+
+
+  ngOnDestroy() {
     this.sub.unsubscribe();
   }
 
@@ -73,27 +93,13 @@ export class BlogListComponent implements OnInit {
     return date.getTime().toString();
   }
 
-
- 
 }
 
 
-function id(id: any, number: any) {
+
+
+
+function getHero() {
   throw new Error('Function not implemented.');
 }
- // ngOnInit(): void {
-   // this.http.get('https://techcrunch.com/wp-json/wp/v2/posts')
-    //.subscribe(Response => {
-     // if(Response){ 
-       // hideloader();
-      //}
-     // console.log(Response)
-     // this.blog=Response;
-     // this.list=this.blog.list;
-   // });
-    //function hideloader(){
-    //  document.getElementById('loading').style.display = 'none';}
-    //}
-  
-
 
