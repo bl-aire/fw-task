@@ -19,7 +19,6 @@ It was generated with [Angular CLI](https://github.com/angular/angular-cli) vers
 | Angular Universal | Server-side rendering |
 | CSS | Styling |
 | HTML | Markup language |
-| ngx-pagination | Pagination|
 
 ## Project brief
 
@@ -27,4 +26,3 @@ The project is a responsive, accessible, single-paged progressive wed applicatio
 
 ## Url
 
-## User Interface

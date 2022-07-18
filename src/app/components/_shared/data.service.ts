@@ -12,12 +12,12 @@ export class DataService {
 
   private endpoint = 'https://techcrunch.com/wp-json/wp/v2/posts';
 
-  private panginationEndpoint = 'https://techcrunch.com/wp-json/wp/v2/posts?per_page=6';
+  private paginationEndpoint = 'https://techcrunch.com/wp-json/wp/v2/posts?per_page=6';
 
   constructor(private http: HttpClient) { }
 
   getPosts(): Observable<IData[]>{
-    return this.http.get<IData[]>(this.panginationEndpoint).pipe(tap(data => console.log('All', JSON.stringify(data))),
+    return this.http.get<IData[]>(this.paginationEndpoint).pipe(tap(data => console.log('All', JSON.stringify(data))),
     catchError(this.handleError)
     );
   }
@@ -28,7 +28,7 @@ export class DataService {
   }
 
   getHero() {
-    const url = 'https://techcrunch.com/wp-json/wp/v2/posts/2355205'
+    const url = 'https://techcrunch.com/wp-json/wp/v2/posts/2355299'
     return this.http.get(url).pipe(tap(data => console.log('All', JSON.stringify(data))),
     catchError(this.handleError)
     );

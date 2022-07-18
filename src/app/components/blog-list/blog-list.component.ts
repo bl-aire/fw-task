@@ -33,16 +33,13 @@ export class BlogListComponent implements OnInit {
     this.typeSelected = 'ball-fussion';
   }
 
-
   ngOnInit() {
     this.spinner.show();
-
     this.sub = this.dataService.getHero().subscribe({
       next: hero => {
         this.hero = hero;
       }
     })
-
 
     this.sub = this.dataService.getPosts().subscribe({
       next: posts => {
@@ -50,13 +47,11 @@ export class BlogListComponent implements OnInit {
         setTimeout(() => {
           this.spinner.hide();
         }, 3000);
-
       },
       error: err => this.errorMessage = err
     });
+
   }
-
-
 
 
   ngOnDestroy() {
@@ -102,4 +97,5 @@ export class BlogListComponent implements OnInit {
 function getHero() {
   throw new Error('Function not implemented.');
 }
+
 

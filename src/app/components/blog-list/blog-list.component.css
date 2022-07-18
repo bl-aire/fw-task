@@ -8,7 +8,17 @@
 }
 
 .hero {
-    margin-bottom: 3em;
+    margin-bottom: 4em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 0.5em;
+}
+
+.hero__text {
+    padding: 1em;
 }
 
 .hero__image {
@@ -17,8 +27,34 @@
     margin-bottom: 1em;
 }
 
-.hero__text-publishDate {
+.hero__text-header {
+    font-weight: 900;
+    line-height: 26.25px;
+    font-size: 22px;
+}
+
+.hero__text-author {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 14.32px;
+}
+
+.hero__text-content {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+
+}
+
+.hero__text-publishDate{
     margin-left: 2em;
+}
+
+.hero__text-publishDate, .hero__footer-readTime {
+    font-weight: 500px;
+    font-size: 12px;
+    line-height: 14.32px;
+    color: #6E6E6E;
 }
 
 .blogpost-container {
@@ -29,19 +65,58 @@
     flex-wrap: wrap;
 }
 
-.blogpost {
-    padding: 1em;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    max-width: 400px;
-    height: 100%;
-    border-radius: 1em;
-    margin-bottom: 5em;
+.blogpost__data-date {
+    margin-left:3em ;
+}
 
+.blogpost {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0.1em 0.1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 370px;
+    height: 420px;
+    border-radius: 1em;
+    margin-bottom:5em;
+}
+
+.blogpost__data{
+    margin: 0.5em 1em 1em;
+}
+
+.blogpost__data-author, .blogpost__data-date, .blogpost__footer-time {
+    font-weight: 500px;
+    font-size: 12px;
+    line-height: 14.32px;
+    color:#6E6E6E
+}
+
+.blogpost__content-body {
+    font-weight: 500px;
+    font-size: 14pxpx;
+    line-height: 21px;
+}
+
+.blogpost__content-header {
+    font-weight:700;
+    font-size: 16px;
+    margin: 0 1em;
+    
 }
 
 .hero__footer, .blogpost__footer {
     display: flex;
     justify-content: space-between;
+}
+
+.blogpost__footer {
+    margin:0 1em;
+}
+
+.blogpost__footer-link{
+    margin-left: 3em;
 }
 
 .hero__footer-link, .blogpost__footer-link {
@@ -67,25 +142,40 @@
     margin-bottom: 3em;
 }
 
+.footer__title {
+    font-weight: 500px;
+    font-size: 32px;
+    
+}
+
 .footer__description {
     text-align: center;
+    font-weight: 700px;
+    font-size: 22px;
+    line-height: 32px;
 }
 
 
 
 @media only screen and (min-width : 992px) {
     .hero {
-        display: flex;
         justify-content: space-between;
+        flex-direction: row;
+        padding: 0 4em;
     }
 
     .blogpost{
         margin: 1em;
     }
+
+    .hero__text{
+        padding-left: 3em;
+    }
     
     .hero__image, .hero__text {
        max-width: 50%;
        height: auto;
+       margin: auto;
 
     }
 }
