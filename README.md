@@ -20,9 +20,9 @@ It was generated with [Angular CLI](https://github.com/angular/angular-cli) vers
 | CSS | Styling |
 | HTML | Markup language |
 
-## Project brief
+## Project summary
 
-The project is a responsive, accessible, single-paged progressive wed application. Hence, it can be installed by users and accessed offline.
+The project is a responsive, single-paged progressive wed application. Hence, it can be installed by users and accessed when a user is offline. Also, API responses are cached to avoid unnecessary server round trips and server-side rendering is set using @angular/universal to improve page load performance.
 
 ## Url
 
