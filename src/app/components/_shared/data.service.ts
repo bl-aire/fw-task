@@ -34,6 +34,13 @@ export class DataService {
     );
   }
 
+  getMore() {
+    const url = 'https://techcrunch.com/wp-json/wp/v2/posts?per_page=3'
+    return this.http.get(url).pipe(tap(data => console.log('All', JSON.stringify(data))),
+    catchError(this.handleError)
+    );
+  }
+
   private handleError(err:HttpErrorResponse) {
     let errorMessage = '';
     if (err.error instanceof ErrorEvent) {

@@ -16,6 +16,7 @@ export class PostDetailsComponent implements OnInit {
 
   errorMessage: string = '';
   singlePost: any;
+  moreArticles: any;
   id!: string;
   sub: Subscription | any;
   posts: IData[] = [];
@@ -24,13 +25,27 @@ export class PostDetailsComponent implements OnInit {
 
   timePublished: string = "2 Months ago"
   totalReadTime: string = "12 Min Read"
+  articles: any;
 
   constructor(private spinner: NgxSpinnerService, private dataService : DataService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.id = this.route.snapshot.paramMap.get('id') as string;
     this.getSinglePost()
-   
+    
+
+    this.sub = this.dataService.getMore().subscribe({
+      next: articles => {
+        this.articles = articles;
+        setTimeout(() => {
+          this.spinner.hide();
+        }, 3000);
+      },
+      error: err => this.errorMessage = err
+    });
+  }
+  getMore() {
+    throw new Error('Method not implemented.');
   }
 
   getSinglePost(){
@@ -48,7 +63,7 @@ export class PostDetailsComponent implements OnInit {
   }
 
   ngOnDestroy(){
-    //this.sub.unsubscribe();
+    this.sub.unsubscribe();
   }
 
 }

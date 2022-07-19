@@ -91,9 +91,6 @@ export class BlogListComponent implements OnInit {
 }
 
 
-
-
-
 function getHero() {
   throw new Error('Function not implemented.');
 }
