@@ -2,6 +2,8 @@
     font-family: "SF Pro", "Sans-serif";
 }
 
+/*Full blog post*/
+
 .post {
     padding: 3em;
     display: flex;
@@ -21,6 +23,13 @@
     line-height: 21px;
     color: #6E6E6E;
 }
+
+.post__data-author, .post__data-timePublished{
+    margin-right: 1em;
+    color: #4b4b4b;
+}
+
+/* More articles post card*/
 
 .blogpost-container {
     display: flex;
@@ -48,10 +57,6 @@
 
 }
 
-.post__data-author, .post__data-timePublished{
-    margin-right: 1em;
-    color: #4b4b4b;
-}
 
 .blogpost-header {
     margin:4em 0 3em 3em  ;
@@ -118,6 +123,7 @@
     border-radius: 0.5em;
 }
 
+/*Media queries for responsiveness*/
 
 @media only screen and (min-width : 992px) {
     .post {

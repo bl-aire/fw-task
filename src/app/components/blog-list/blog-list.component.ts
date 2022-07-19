@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { IData } from '../_shared/datainterface';
 import { Subscription } from 'rxjs';
 import { DataService } from '../_shared/data.service';
+import { startWith } from 'rxjs/operators';
 import {
   Flutterwave,
   InlinePaymentOptions,
@@ -9,24 +10,24 @@ import {
 } from "flutterwave-angular-v3";
 import { NgxSpinnerService } from 'ngx-spinner'
 
+
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
   styleUrls: ['./blog-list.component.css']
 })
+
+
 export class BlogListComponent implements OnInit {
 
   timePublished: string = "2 Months ago"
   totalReadTime: string = "12 Min Read"
 
   typeSelected: string;
-
   errorMessage: string = '';
   sub: Subscription | any;
-
   posts: IData[] = [];
-
-  hero: any;;
+  hero: any;
   id!: string;
 
   constructor(private dataService: DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) {
@@ -50,7 +51,6 @@ export class BlogListComponent implements OnInit {
       },
       error: err => this.errorMessage = err
     });
-
   }
 
 
@@ -90,9 +90,5 @@ export class BlogListComponent implements OnInit {
 
 }
 
-
-function getHero() {
-  throw new Error('Function not implemented.');
-}
 
 

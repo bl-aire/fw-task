@@ -54,5 +54,4 @@ export interface IData {
     authors: any[],
     hide_featured_image: boolean,
     canonical_url: any
-
 }

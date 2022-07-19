@@ -15,14 +15,10 @@ It was generated with [Angular CLI](https://github.com/angular/angular-cli) vers
 | VScode | IDE |
 | Git and GitHub | Version control |
 | Angular | Javascript framework |
-| @angular/pwa | Service worker |
 | Angular Universal | Server-side rendering |
 | CSS | Styling |
 | HTML | Markup language |
 
 ## Project summary
 
-The project is a responsive, single-paged progressive wed application. Hence, it can be installed by users and accessed when a user is offline. Also, API responses are cached to avoid unnecessary server round trips and server-side rendering is set using @angular/universal to improve page load performance.
-
-## Url
-
+The project is a responsive, single-paged wed application. Its content is created with data gotten from a fetch request to Techcrunch's API and server-side rendering is set using @angular/universal to improve page load performance.

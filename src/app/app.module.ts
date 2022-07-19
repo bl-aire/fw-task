@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Inject } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
@@ -10,6 +10,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { HttpClientModule } from '@angular/common/http';
 import { FlutterwaveModule } from 'flutterwave-angular-v3';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { DataService } from './components/_shared/data.service';
 
 @NgModule({
   declarations: [
@@ -25,9 +26,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
     FlutterwaveModule,
     BrowserAnimationsModule,
     NgxSpinnerModule
+    //ModuleMapLoaderModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(){}
+}
