@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FlutterwaveModule } from 'flutterwave-angular-v3';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { DataService } from './components/_shared/data.service';
+import { routes } from './app-routing.module'
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { DataService } from './components/_shared/data.service';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    RouterModule.forRoot(routes),
     AppRoutingModule,
     HttpClientModule,
     FlutterwaveModule,
