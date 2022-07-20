@@ -6,7 +6,7 @@ import { PostDetailsComponent } from "./components/post-details/post-details.com
 export const routes: Routes = [
     { path: 'home', component: BlogListComponent },
     { path: 'post/:id', component: PostDetailsComponent },
-    { path: '', redirectTo: '/home', pathMatch: 'full' },
+    //{ path: '', redirectTo: '/home', pathMatch: 'full' },
     { path: '**', component: BlogListComponent },
 ];
 
