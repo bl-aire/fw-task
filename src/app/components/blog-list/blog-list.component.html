@@ -3,7 +3,7 @@
 <div class="container">
     <div class="hero" *ngIf="hero">
         
-        <img class="hero__image" [src]="hero.jetpack_featured_media_url" alt="hero">
+        <img class="hero__image" [src]="hero.parsely.meta.thumbnailUrl" alt="hero">
         
         <div class="hero__text">
             <span class="hero__text-author">{{ hero.parsely.meta.creator }}</span>
