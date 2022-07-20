@@ -24,7 +24,7 @@
 
     <div class="blogpost-container">
         <div *ngFor="let post of posts" class="blogpost">
-            <img [src]="post.jetpack_featured_media_url" alt="blog-picture" class="blogpost__image" width="340px" height="220px">
+            <img [src]="post.parsely.meta.thumbnailUrl" alt="blog-picture" class="blogpost__image" width="340px" height="220px">
            
             <div class="blogpost__content">
                 <div class="blogpost__data">
