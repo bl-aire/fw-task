@@ -12,7 +12,7 @@
     <h2 class="blogpost-header">More Articles</h2>
     <div class="blogpost-container">
         <div *ngFor="let article of articles" class="blogpost">
-            <img [src]="article.parsely.meta.thumbnailUrl" alt="blogpost-image" class="blogpost__image" width="340px" height="220px">
+            <img [src]="article.jetpack_featured_media_url" alt="blogpost-image" class="blogpost__image" width="340px" height="220px">
             <div class="blogpost__content">
                 <div class="blogpost__data">
                     <small class="blogpost__data-author">{{ article.parsely.meta.creator }}</small>
