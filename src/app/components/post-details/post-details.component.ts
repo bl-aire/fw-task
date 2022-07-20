@@ -1,9 +1,10 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Inject } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Subscription } from 'rxjs';
 import { IData } from '../_shared/datainterface';
 import { DataService } from '../_shared/data.service';
 import { ActivatedRoute } from '@angular/router';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-post-details',

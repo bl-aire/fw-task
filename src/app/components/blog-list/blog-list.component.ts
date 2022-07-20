@@ -9,7 +9,8 @@ import {
   PaymentSuccessResponse,
 } from "flutterwave-angular-v3";
 import { NgxSpinnerService } from 'ngx-spinner'
-
+import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 
 @Component({
   selector: 'app-blog-list',
@@ -30,10 +31,10 @@ export class BlogListComponent implements OnInit {
   hero: any;
   id!: string;
 
-  constructor(private dataService: DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) {
+  constructor(@Inject(PLATFORM_ID) private platformId: Object,private dataService: DataService, private flutterwave: Flutterwave, private spinner: NgxSpinnerService) {
     this.typeSelected = 'ball-fussion';
-  }
 
+  }
   ngOnInit() {
     this.spinner.show();
     this.sub = this.dataService.getHero().subscribe({
@@ -57,7 +58,6 @@ export class BlogListComponent implements OnInit {
   ngOnDestroy() {
     this.sub.unsubscribe();
   }
-
 
   publicKey = "FLWPUBK_TEST-08976f7d01df473244698700d4cd64e7-X";
   amount: number = 25;
@@ -91,4 +91,8 @@ export class BlogListComponent implements OnInit {
 }
 
 
+
+  function ngOnInit() {
+    throw new Error('Function not implemented.');
+  }
 

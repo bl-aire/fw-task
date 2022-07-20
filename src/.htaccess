@@ -5,4 +5,4 @@
     RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} -d
     RewriteRule ^.*$ - [NC,L]
     RewriteRule ^(?!.*\.).*$ index.html [NC,L]
-<IfModule
+</IfModule>
